@@ -69,13 +69,13 @@ var appjs = [
 	"    rrest = require('rrestjs'),",
 	"    server = http.createServer(function (req, res){//这里是请求主入口",
 	"        try{",
-    "            require('./controller/'+req.path[0])[req.path[1]](req, res);//执行指定控制器中的方法，将req和res传参进去",
-    "            }",
-	"         catch(err){",
-    "              restlog.info(err);//有error，info，等多种等级",
-    "              res.r404();",
-    "           }",
-	"      }).listen(rrest.config.listenPort);"
+        "            require('./controller/'+req.path[0])[req.path[1]](req, res);//执行指定控制器中的方法，将req和res传参进去",
+        "        }",
+	"        catch(err){",
+        "            restlog.info(err);//有error，info，等多种等级",
+        "            res.r404();",
+        "        }",
+	"    }).listen(rrest.config.listenPort);"
 ].join(eol);
 
 
@@ -89,9 +89,9 @@ var app_router_js = [
 	"    rrest = require('rrestjs'),",
 	"    server = http.createServer(function (req, res){//这里是请求主入口",
 	"        if(req.pathname === '/'){",
-        "           return res.send('hello rrestjs!') && false",
-        "            }",
-	"      }).listen(rrest.config.listenPort);"
+        "            return res.send('hello rrestjs!') && false",
+        "        }",
+	"    }).listen(rrest.config.listenPort);"
 ].join(eol);
 
 
@@ -119,10 +119,6 @@ var controller_user = [// JavaScript Document
 "user.regist = function(req, res){",
 "		//do something",
 "		res.send('/user/regist');",
-"	}",
-"user.login = function(req, res){",
-"		//do something",
-"		res.send('/user/login');",
 "	}",
 "user.logout = function(req, res){",
 "		//do something",
